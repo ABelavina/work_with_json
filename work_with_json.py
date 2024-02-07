@@ -51,7 +51,7 @@ def put_by_path(obj, new_value, *path):
     reduce(operator.getitem, keys, obj)[newkey] = new_value
     return obj
 
-def Put_on_Server(login, password, var_to_change, val_to_change, terms_dict={}, url):
+def Put_on_Server(login, password, var_to_change, val_to_change, terms_dict={}, url=''):
     try:
         #res=url #Для теста
         res=Get_From_Server(login, password, url)
@@ -89,5 +89,6 @@ terms_dict={"term_param_1": "abcde", "term_param_2":None}
 login=''
 #Пароль пользователя, для подключения к FICO
 password=''
+url=''
 
-Put_on_Server(login, password, var_to_change, val_to_change, terms_dict)
+Put_on_Server(login, password, var_to_change, val_to_change, terms_dict, url)
